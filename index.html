@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="theme-color" content="#e30613" />
+    <title>KITEA | Jeu coupons</title>
+    <link rel="icon" href="data:," />
+    <link rel="preload" href="./assets/kitea-summer-start.jpeg" as="image" />
+    <link rel="preload" href="./assets/kitea-game-background.png" as="image" />
+    <link rel="preload" href="./assets/kitea-memory-success-screen.jpeg" as="image" />
+    <link rel="preload" href="./assets/kitea-wheel-screen.jpeg" as="image" />
+    <link rel="preload" href="./assets/kitea-final-screen.jpeg" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="experience" data-experience data-screen="intro" aria-label="Jeu coupons KITEA">
+      <section class="screen screen-intro" data-screen-panel="intro" aria-label="Accueil du jeu">
+        <div class="artboard" data-artboard>
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-summer-start.jpeg"
+            width="1536"
+            height="1024"
+            alt="KITEA, cet ete, amenagez plus, gagnez plus. Tentez votre chance et gagnez un cadeau exclusif KITEA."
+            draggable="false"
+          />
+
+          <button
+            class="start-hitbox"
+            type="button"
+            data-start-button
+            aria-label="Commencer le jeu KITEA"
+          ></button>
+        </div>
+      </section>
+
+      <section class="screen screen-game" data-screen-panel="game" aria-label="Niveau 1">
+        <div class="artboard artboard-game" data-game-artboard>
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-game-background.png"
+            width="1644"
+            height="957"
+            alt=""
+            draggable="false"
+          />
+
+          <div class="game-heading" aria-hidden="true">
+            <div class="level-title"><span></span>NIVEAU 1<span></span></div>
+            <h1>CATCH THE <strong>COUPON !</strong></h1>
+            <p>Attrapez un maximum de coupons<br />avant la fin du temps !</p>
+          </div>
+
+          <button class="quit-button" type="button" data-quit-button aria-label="Quitter le jeu">
+            <span aria-hidden="true">‹</span>
+            <strong>QUITTER</strong>
+          </button>
+
+          <div class="timer-card" aria-live="polite">
+            <div class="timer-card__head">TEMPS RESTANT</div>
+            <div class="timer-card__value"><span data-time-left>10</span>s</div>
+          </div>
+
+          <div class="score-card" aria-live="polite">
+            <div class="score-card__icon" aria-hidden="true"></div>
+            <div class="score-card__content">
+              <div class="score-card__label">ATTRAPÉS</div>
+              <div class="score-card__value"><span data-score>00</span><span>/15</span></div>
+            </div>
+          </div>
+
+          <div class="objective-card">
+            <div class="objective-card__icon" aria-hidden="true"></div>
+            <div class="objective-card__content">
+              <div class="objective-card__title">OBJECTIF</div>
+              <p>Attraper au moins <strong>15</strong> coupons</p>
+            </div>
+          </div>
+
+          <div class="play-layer" data-play-layer aria-hidden="true"></div>
+
+          <div class="catcher" data-catcher aria-hidden="true">
+            <div class="catcher__rim"></div>
+            <div class="catcher__body">
+              <div class="catcher__logo">KiTEA</div>
+              <div class="catcher__tagline">AMÉNAGEZ PLUS, GAGNEZ PLUS !</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-result" data-screen-panel="result" aria-label="Fin du niveau">
+        <div class="artboard artboard-result">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-game-background.png"
+            width="1644"
+            height="957"
+            alt=""
+            draggable="false"
+          />
+
+          <div class="reward-umbrellas" aria-hidden="true">
+            <div class="drop reward-drop reward-drop--left" style="--x: 19%; --drop-w: 10.58%; --drop-h: 24.55%; --delay: -1.6s; --duration: 8.2s">
+              <div class="drop__canopy"></div>
+              <div class="drop__strings"></div>
+              <div class="drop__coupon">10%</div>
+            </div>
+            <div class="drop reward-drop reward-drop--left-low drop--white" style="--x: 25%; --drop-w: 8.82%; --drop-h: 20.45%; --delay: -4.2s; --duration: 9s">
+              <div class="drop__canopy"></div>
+              <div class="drop__strings"></div>
+              <div class="drop__coupon">5%</div>
+            </div>
+            <div class="drop reward-drop reward-drop--right drop--white" style="--x: 78%; --drop-w: 10.34%; --drop-h: 23.98%; --delay: -2.8s; --duration: 8.6s">
+              <div class="drop__canopy"></div>
+              <div class="drop__strings"></div>
+              <div class="drop__coupon">15%</div>
+            </div>
+            <div class="drop reward-drop reward-drop--right-low" style="--x: 82%; --drop-w: 9.61%; --drop-h: 22.29%; --delay: -5.8s; --duration: 9.4s">
+              <div class="drop__canopy"></div>
+              <div class="drop__strings"></div>
+              <div class="drop__coupon">K</div>
+            </div>
+          </div>
+
+          <div class="reward-panel" aria-live="polite">
+            <div class="reward-confetti" aria-hidden="true">
+              <i style="--x: 8%; --y: 6%; --c: #159ee2; --r: -34deg"></i>
+              <i style="--x: 20%; --y: 8%; --c: #e30613; --r: 38deg"></i>
+              <i style="--x: 31%; --y: 4%; --c: #23b5bd; --r: -20deg"></i>
+              <i style="--x: 64%; --y: 7%; --c: #e30613; --r: 28deg"></i>
+              <i style="--x: 75%; --y: 6%; --c: #43b8d0; --r: -30deg"></i>
+              <i style="--x: 89%; --y: 11%; --c: #f7b000; --r: 35deg"></i>
+              <i style="--x: 13%; --y: 28%; --c: #17a9b8; --r: -38deg"></i>
+              <i style="--x: 25%; --y: 34%; --c: #f05a28; --r: 26deg"></i>
+              <i style="--x: 76%; --y: 32%; --c: #f7b000; --r: -25deg"></i>
+              <i style="--x: 88%; --y: 28%; --c: #e30613; --r: 34deg"></i>
+              <i style="--x: 9%; --y: 50%; --c: #f05a28; --r: 30deg"></i>
+              <i style="--x: 22%; --y: 60%; --c: #e30613; --r: -40deg"></i>
+              <i style="--x: 81%; --y: 58%; --c: #23b5bd; --r: 34deg"></i>
+              <i style="--x: 91%; --y: 47%; --c: #f05a28; --r: -30deg"></i>
+            </div>
+
+            <div class="reward-check" aria-hidden="true"></div>
+            <h2>BRAVO !</h2>
+            <p>Vous avez capturé suffisamment<br />de coupons !</p>
+
+            <div class="reward-summary">
+              <div class="reward-summary__objective">
+                <div class="score-card__icon" aria-hidden="true"></div>
+                <div>
+                  <strong>OBJECTIF</strong>
+                  <span>Minimum <b>15</b> coupons</span>
+                </div>
+              </div>
+              <div class="reward-summary__divider"></div>
+              <div class="reward-summary__score">
+                <strong>ATTRAPÉS</strong>
+                <span><b data-result-score>15</b> / 15</span>
+              </div>
+              <div class="reward-summary__ok" aria-hidden="true"></div>
+            </div>
+
+            <button class="continue-button" type="button" data-continue-button aria-label="Continuer">
+              <span>CONTINUER</span>
+              <strong aria-hidden="true">›</strong>
+            </button>
+
+            <div class="reward-progress" aria-hidden="true">
+              <strong>PROGRESSION</strong>
+              <div class="reward-progress__steps">
+                <span class="is-active">1</span>
+                <span>2</span>
+                <span>3</span>
+              </div>
+              <em>1/3</em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-memory" data-screen-panel="memory" aria-label="Niveau 2 Memoire maison">
+        <div class="artboard artboard-memory">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-game-background.png"
+            width="1644"
+            height="957"
+            alt=""
+            draggable="false"
+          />
+
+          <div class="memory-panel">
+            <button class="memory-back" type="button" data-memory-back aria-label="Retour">
+              <span aria-hidden="true">‹</span>
+              <strong>RETOUR</strong>
+            </button>
+
+            <div class="memory-copy">
+              <p class="memory-level">NIVEAU 2</p>
+              <h2>MÉMOIRE MAISON</h2>
+              <p class="memory-lead">Observez bien la séquence<br />puis reproduisez-la&nbsp;!</p>
+              <span class="memory-separator"></span>
+
+              <div class="memory-rules">
+                <div class="memory-rule">
+                  <span class="memory-rule__icon memory-rule__icon--case" aria-hidden="true">3s</span>
+                  <p><strong>3 SÉQUENCES</strong><br />À mémoriser et reproduire</p>
+                </div>
+                <div class="memory-rule">
+                  <span class="memory-rule__icon memory-rule__icon--timer" aria-hidden="true"></span>
+                  <p><strong>3 SECONDES</strong><br />D’OBSERVATION</p>
+                </div>
+                <div class="memory-rule">
+                  <span class="memory-rule__icon memory-rule__icon--tap" aria-hidden="true"></span>
+                  <p><strong>REPRODUISEZ</strong><br />LA MÊME SÉQUENCE</p>
+                </div>
+              </div>
+
+              <button class="memory-start" type="button" data-memory-start aria-label="Commencer le niveau 2">
+                <span>COMMENCER</span>
+                <strong aria-hidden="true">›</strong>
+              </button>
+            </div>
+
+            <div class="memory-grid" aria-label="Cartes produits">
+              <button class="memory-card" type="button" aria-label="Canape">
+                <img src="./assets/memory-sofa.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Plante">
+                <img src="./assets/memory-plant.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Lampe">
+                <img src="./assets/memory-lamp.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Coussin">
+                <img src="./assets/memory-pillow.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Chaise">
+                <img src="./assets/memory-chair.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Vase">
+                <img src="./assets/memory-vase.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Panier">
+                <img src="./assets/memory-basket.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Table">
+                <img src="./assets/memory-table.png" alt="" draggable="false" />
+              </button>
+              <button class="memory-card" type="button" aria-label="Parasol">
+                <img src="./assets/memory-parasol.png" alt="" draggable="false" />
+              </button>
+            </div>
+
+            <div class="memory-sequences">
+              <span>SÉQUENCES</span>
+              <strong>3</strong>
+              <em>À RÉUSSIR</em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-memory-observe" data-screen-panel="memory-observe" aria-label="Observation de la sequence">
+        <div class="artboard artboard-memory">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-game-background.png"
+            width="1644"
+            height="957"
+            alt=""
+            draggable="false"
+          />
+
+          <div class="memory-panel memory-panel--stage">
+            <button class="memory-back" type="button" data-memory-back aria-label="Retour">
+              <span aria-hidden="true">‹</span>
+              <strong>RETOUR</strong>
+            </button>
+
+            <div class="memory-stage-title">
+              <span></span>
+              <strong>SÉQUENCE 1/3</strong>
+              <span></span>
+            </div>
+
+            <aside class="memory-stage-left memory-stage-left--observe">
+              <p class="memory-level">NIVEAU 2</p>
+              <h2>MÉMOIRE<br />MAISON</h2>
+              <p class="memory-stage-subtitle">OBSERVEZ LA SÉQUENCE</p>
+              <div class="memory-observe-clock"><span aria-hidden="true"></span><strong data-observe-time>03</strong>s</div>
+              <p class="memory-stage-note">Mémorisez bien l’ordre<br />des objets.</p>
+              <div class="memory-reminder">
+                <strong>RAPPEL</strong>
+                <p>Vous devrez reproduire<br />la même séquence ensuite.</p>
+              </div>
+            </aside>
+
+            <div class="memory-stage-grid memory-stage-grid--observe" aria-label="Sequence a observer">
+              <div class="memory-card memory-card--sequence" data-sequence-index="0"><img src="./assets/memory-sofa.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="1"><img src="./assets/memory-plant.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="2"><img src="./assets/memory-lamp.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="3"><img src="./assets/memory-pillow.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="4"><img src="./assets/memory-chair.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="5"><img src="./assets/memory-vase.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="6"><img src="./assets/memory-basket.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="7"><img src="./assets/memory-table.png" alt="" draggable="false" /></div>
+              <div class="memory-card memory-card--sequence" data-sequence-index="8"><img src="./assets/memory-parasol.png" alt="" draggable="false" /></div>
+            </div>
+
+            <div class="memory-side-card memory-side-card--observe">
+              <strong>TEMPS<br />D’OBSERVATION</strong>
+              <span><b data-observe-time-card>03</b>s</span>
+            </div>
+
+            <div class="memory-side-card memory-side-card--try">
+              <strong>ESSAI</strong>
+              <span>1/3</span>
+            </div>
+
+            <div class="memory-watch">
+              <strong>REGARDEZ ATTENTIVEMENT...</strong>
+              <span><i></i></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-memory-play" data-screen-panel="memory-play" aria-label="Reproduire la sequence">
+        <div class="artboard artboard-memory">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-game-background.png"
+            width="1644"
+            height="957"
+            alt=""
+            draggable="false"
+          />
+
+          <div class="memory-panel memory-panel--stage">
+            <button class="memory-back" type="button" data-memory-back aria-label="Retour">
+              <span aria-hidden="true">‹</span>
+              <strong>RETOUR</strong>
+            </button>
+
+            <div class="memory-stage-title">
+              <span></span>
+              <strong>SÉQUENCE 1/3</strong>
+              <span></span>
+            </div>
+            <p class="memory-play-instruction">TOUCHEZ LES CASES DANS LE BON ORDRE</p>
+
+            <aside class="memory-stage-left memory-stage-left--play">
+              <p class="memory-level">NIVEAU 2</p>
+              <h2>MÉMOIRE<br />MAISON</h2>
+              <span class="memory-separator"></span>
+              <div class="memory-play-help">
+                <span class="memory-rule__icon memory-rule__icon--tap" aria-hidden="true"></span>
+                <p>Reproduisez la<br />séquence dans<br />le bon ordre.</p>
+              </div>
+              <div class="memory-mini-progress">
+                <div><span class="is-active">1</span><span>2</span><span>3</span></div>
+                <strong>SÉQUENCES</strong>
+                <em>1/3</em>
+              </div>
+              <button class="memory-hint" type="button" data-memory-hint>
+                <span aria-hidden="true"></span>
+                <strong>INDICE</strong>
+              </button>
+            </aside>
+
+            <div class="memory-stage-grid memory-stage-grid--play" aria-label="Objets a selectionner">
+              <button class="memory-card memory-card--play" type="button" data-memory-card="0" aria-label="Canape"><img src="./assets/memory-sofa.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="1" aria-label="Plante"><img src="./assets/memory-plant.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="2" aria-label="Lampe"><img src="./assets/memory-lamp.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="3" aria-label="Coussin"><img src="./assets/memory-pillow.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="4" aria-label="Chaise"><img src="./assets/memory-chair.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="5" aria-label="Vase"><img src="./assets/memory-vase.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="6" aria-label="Panier"><img src="./assets/memory-basket.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="7" aria-label="Table"><img src="./assets/memory-table.png" alt="" draggable="false" /></button>
+              <button class="memory-card memory-card--play" type="button" data-memory-card="8" aria-label="Parasol"><img src="./assets/memory-parasol.png" alt="" draggable="false" /></button>
+            </div>
+
+            <div class="memory-side-card memory-side-card--attempt">
+              <strong>ESSAI</strong>
+              <span>1/3</span>
+            </div>
+
+            <div class="memory-countdown">
+              <div><strong data-memory-play-time>20</strong><span>s</span><em>TEMPS RESTANT</em></div>
+            </div>
+
+            <div class="memory-selection-dots" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="memory-select-label">SÉLECTIONNEZ <strong>9</strong> OBJETS DANS LE BON ORDRE</p>
+
+            <button class="memory-reset" type="button" data-memory-reset>
+              <span aria-hidden="true">↻</span>
+              <strong>RÉINITIALISER</strong>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-memory-success" data-screen-panel="memory-success" aria-label="Sequence reussie">
+        <div class="artboard artboard-memory-success">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-game-background.png"
+            width="1644"
+            height="957"
+            alt=""
+            draggable="false"
+          />
+
+          <button class="memory-back memory-success-back" type="button" data-memory-success-back aria-label="Retour">
+            <span aria-hidden="true">‹</span>
+            <strong>RETOUR</strong>
+          </button>
+
+          <div class="memory-success-panel" aria-live="polite">
+            <div class="memory-success-confetti" aria-hidden="true">
+              <i style="--x: 10%; --y: 5%; --c: #159ee2; --r: -34deg; --d: 0s"></i>
+              <i style="--x: 18%; --y: 13%; --c: #e30613; --r: 32deg; --d: -1.1s"></i>
+              <i style="--x: 28%; --y: 8%; --c: #f7b000; --r: -20deg; --d: -0.5s"></i>
+              <i style="--x: 38%; --y: 4%; --c: #7343c9; --r: 28deg; --d: -1.7s"></i>
+              <i style="--x: 62%; --y: 6%; --c: #e30613; --r: -25deg; --d: -0.8s"></i>
+              <i style="--x: 72%; --y: 12%; --c: #1aaeb7; --r: 38deg; --d: -1.4s"></i>
+              <i style="--x: 86%; --y: 7%; --c: #198fd3; --r: -28deg; --d: -0.2s"></i>
+              <i style="--x: 14%; --y: 30%; --c: #f36d21; --r: 30deg; --d: -1.8s"></i>
+              <i style="--x: 24%; --y: 38%; --c: #23b5bd; --r: -38deg; --d: -0.9s"></i>
+              <i style="--x: 76%; --y: 32%; --c: #f7b000; --r: 28deg; --d: -1.2s"></i>
+              <i style="--x: 88%; --y: 42%; --c: #e30613; --r: -34deg; --d: -0.6s"></i>
+            </div>
+
+            <div class="reward-check memory-success-check" aria-hidden="true"></div>
+            <h2>PARFAIT&nbsp;!</h2>
+            <p>Séquence 2 réussie&nbsp;!</p>
+
+            <div class="memory-success-steps" aria-hidden="true">
+              <span class="is-done"></span>
+              <span class="is-active">2</span>
+              <span>3</span>
+            </div>
+
+            <div class="memory-success-note">
+              <span aria-hidden="true"></span>
+              <div>
+                <strong>VOUS ÊTES INCROYABLE&nbsp;!</strong>
+                <p>Vous avez mémorisé et reproduit 2 séquences avec succès.</p>
+              </div>
+            </div>
+
+            <button class="continue-button memory-success-continue" type="button" data-memory-success-continue aria-label="Continuer">
+              <span>CONTINUER</span>
+              <strong aria-hidden="true">›</strong>
+            </button>
+          </div>
+
+          <div class="memory-success-badge" aria-hidden="true">
+            <span>SÉQUENCES</span>
+            <strong>2/3</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen screen-wheel" data-screen-panel="wheel" aria-label="Niveau 3 roue de fortune">
+        <div class="artboard artboard-wheel">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-wheel-screen.jpeg"
+            width="1600"
+            height="900"
+            alt="Niveau 3, la roue ete KITEA."
+            draggable="false"
+          />
+
+          <button
+            class="wheel-hotspot wheel-hotspot--back"
+            type="button"
+            data-wheel-back
+            aria-label="Retour"
+          ></button>
+          <button
+            class="wheel-hotspot wheel-hotspot--spin"
+            type="button"
+            data-spin-button
+            aria-label="Faire tourner la roue"
+          ></button>
+        </div>
+      </section>
+
+      <section class="screen screen-final" data-screen-panel="final" aria-label="Felicitations cadeau">
+        <div class="artboard artboard-final">
+          <img
+            class="artboard__visual"
+            src="./assets/kitea-final-screen.jpeg"
+            width="1600"
+            height="900"
+            alt="Felicitations, vous avez gagne."
+            draggable="false"
+          />
+
+          <button
+            class="final-hotspot final-hotspot--back"
+            type="button"
+            data-final-back
+            aria-label="Retour"
+          ></button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
