@@ -104,6 +104,7 @@
   const clearSpinTimer = () => {
     clearTimeout(spinTimer);
     delete experience.dataset.wheelSpinning;
+    spinButton.disabled = false;
   };
 
   const renderObserveTime = (value) => {
@@ -362,13 +363,15 @@
     setScreen("memory-success");
   });
   spinButton.addEventListener("click", () => {
+    if (experience.dataset.wheelSpinning === "true") return;
     clearSpinTimer();
     experience.dataset.intent = "final";
     experience.dataset.wheelSpinning = "true";
+    spinButton.disabled = true;
     spinTimer = window.setTimeout(() => {
       clearSpinTimer();
       setScreen("final");
-    }, 650);
+    }, 2150);
   });
   finalBackButton.addEventListener("click", () => {
     clearSpinTimer();
